@@ -12,6 +12,7 @@ The following image shows the detour to Jim Thompson House.
 
 Location data is obtained from Foursquare API.  A Venue API parameter 'section' will be set to 'arts' to get a tourist attraction in an art category.  The distance between two locations is obtained from Google Distance Matrix API.  The API receives origin and destination in latitude and longitude.  It returns the distance and the travel duration.  The sample result from the API is as follows.
 
+```
 {
   "destination_addresses": [
     "50/5 Rama I Rd, Khwaeng Rong Muang, Khet Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand"
@@ -38,3 +39,4 @@ Location data is obtained from Foursquare API.  A Venue API parameter 'section' 
   ],
   "status": "OK"
 }
+```
