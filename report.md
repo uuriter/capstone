@@ -74,6 +74,8 @@ width="700" />
  
 # Result
 
+<img src="https://pasteboardfiles.s3.amazonaws.com/images/f3d7c29/dda1211e6e5308244265134c412cb239.png?X-Amz-Expires=600&X-Amz-Date=20180926T012137Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJZEXC3KKHVJLXFMA/20180926/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3af0d1405dad7c3a6455944cfd27a365508c0e642efe77e20cb32e77539e9936"
+width="600" />
 
 # Discussion
 
@@ -82,10 +84,11 @@ However, we display only a duration because there are some cases that a trip dis
 The reason that a trip distance is less than the usual distance is because the trip directions is not in a fastest route from the origin to the destination.
 
 During the experiment, we found that Folium cannot display the map.  
-This is due to some character in the label that we set to a marker.
-After we replace a double quote with a space, the problem is gone.
+We suspected that it is because some characters in the label that we set to a marker.
+We investigate by manually resizing the label until we found that a single quote causes the problem.
+Therefore, we replace a single quote with a space, the problem is gone.
 
-We also found that IPyWidget's interact does not work with Jupyter Lab.
+We also found that IPyWidget's `interact` does not work with Jupyter Lab.
 Therefore, we have to switch back to Jupyter Notebook.
 
 # Conclusion
