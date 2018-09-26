@@ -70,5 +70,26 @@ If the slider is set to 10,
 the map will show the venues with 5-10 minutes the detour duration.
 
 <img src="https://pasteboardfiles.s3.amazonaws.com/images/f3d7c29/8882f4cdef85c87e80346ac13c3f3e91.png?X-Amz-Expires=600&X-Amz-Date=20180926T005731Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJZEXC3KKHVJLXFMA/20180926/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=baec273bcd1aa4f6805be672b2904b9e6bd8d2e34c611def47b78b94a69a0d1d"
-width="300" />
+width="700" />
  
+# Result
+
+
+# Discussion
+
+Google Maps Distance Matrix API returns a distance and a duration from an origin to a destination.
+However, we display only a duration because there are some cases that a trip distance (i.e., a distance from the origin to the tourist attraction plus the distance from the tourist attraction to the destination) is less than a usual distance (i.e., a distance from the origin to the destination.)
+The reason that a trip distance is less than the usual distance is because the trip directions is not in a fastest route from the origin to the destination.
+
+During the experiment, we found that Folium cannot display the map.  
+This is due to some character in the label that we set to a marker.
+After we replace a double quote with a space, the problem is gone.
+
+We also found that IPyWidget's interact does not work with Jupyter Lab.
+Therefore, we have to switch back to Jupyter Notebook.
+
+# Conclusion
+
+In this report, we propose a Tour Detour initiative.
+We build a tool for supporting the initiative.
+The tool can interactively display tourist attractions.
