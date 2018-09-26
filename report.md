@@ -74,8 +74,15 @@ width="700" />
  
 # Result
 
-<img src="https://pasteboardfiles.s3.amazonaws.com/images/f3d7c29/dda1211e6e5308244265134c412cb239.png?X-Amz-Expires=600&X-Amz-Date=20180926T012137Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJZEXC3KKHVJLXFMA/20180926/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3af0d1405dad7c3a6455944cfd27a365508c0e642efe77e20cb32e77539e9936"
-width="600" />
+The following images show the list of tourist attractions varied by the detour duration.
+The detour duration is set using a slider obtained from IPyWidget.
+The blue markers are origin and destination.
+The red markers are tourist attraction.
+The label of the red markers contains the name and the detour duration.
+
+<img src="https://cdn.pbrd.co/images/HFBrNhx.png" width="600" />
+<img src="https://cdn.pbrd.co/images/HFBs4D9.png" width="600" />
+
 
 # Discussion
 
@@ -83,7 +90,7 @@ Google Maps Distance Matrix API returns a distance and a duration from an origin
 However, we display only a duration because there are some cases that a trip distance (i.e., a distance from the origin to the tourist attraction plus the distance from the tourist attraction to the destination) is less than a usual distance (i.e., a distance from the origin to the destination.)
 The reason that a trip distance is less than the usual distance is because the trip directions is not in a fastest route from the origin to the destination.
 
-During the experiment, we found that Folium cannot display the map.  
+During the experiment, we found that Folium cannot display the map.
 We suspected that it is because some characters in the label that we set to a marker.
 We investigate by manually resizing the label until we found that a single quote causes the problem.
 Therefore, we replace a single quote with a space, the problem is gone.
