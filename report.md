@@ -58,10 +58,10 @@ The API returns data in JSON format which is transformed to Pandas DataFrame.
 **Google Map Distance Matrix API** is used to find the usual route duration and a trip duration.
 The usual route duration is the duration from the origin to the destination.
 The trip duration is the duration from origin to a tourist attraction and from a tourist attraction to the destination.
-A detour duration is the difference between these duration.
+A detour duration is the difference between these durations.
 It is added to the DataFrame for data visualization.
 
-**Folium library** and **IPyWidget** are used to interactively *explore* tourist attractions.
+**Folium library** and **IPyWidget** are used to interactively explore tourist attractions.
 Folium library is used to display an interactive map.
 IPyWidget is used to filter the DataFrame by the detour duration.
 For example, as shown in the picture when the slider is set to 5, 
@@ -79,6 +79,7 @@ The detour duration is set using a slider obtained from IPyWidget.
 The blue markers are origin and destination.
 The red markers are tourist attraction.
 The label of the red markers contains the name and the detour duration.
+The numbers above the map are the shape of the DataFrame is the the data source of the markers in the map.
 
 <img src="https://cdn.pbrd.co/images/HFBrNhx.png" width="600" />
 <img src="https://cdn.pbrd.co/images/HFBs4D9.png" width="600" />
@@ -92,7 +93,8 @@ The reason that a trip distance is less than the usual distance is because the t
 
 During the experiment, we found that Folium cannot display the map.
 We suspected that it is because some characters in the label that we set to a marker.
-We investigate by manually resizing the label until we found that a single quote causes the problem.
+We investigate by manually resizing the label until we found that the problematic character.
+It is a single quote that causes the problem.
 Therefore, we replace a single quote with a space, the problem is gone.
 
 We also found that IPyWidget's `interact` does not work with Jupyter Lab.
